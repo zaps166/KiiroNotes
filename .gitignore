@@ -1,0 +1,6 @@
+GitHubDownloadCount
+*.pro.user
+build*
+*.exe
+*.qm
+*.o

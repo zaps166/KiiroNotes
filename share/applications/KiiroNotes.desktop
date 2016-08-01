@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=KiiroNotes
+Icon=KiiroNotes
+Name=KiiroNotes
+Comment=Simple notes for Linux desktop
+Comment[pl]=Proste notatki na pulpit Linuxa
+StartupNotify=false
+Type=Application
+Categories=Qt;Utility;
