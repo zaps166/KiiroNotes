@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
     /**/
 
-    app.setApplicationVersion("v0.0.1");
+    app.setApplicationVersion("v0.0.2");
     app.setQuitOnLastWindowClosed(false);
     app.setApplicationName("KiiroNotes");
     app.setWindowIcon(QIcon::fromTheme("KiiroNotes"));
@@ -50,7 +50,6 @@ int main(int argc, char *argv[])
     /**/
 
     notes = new Notes;
-    notes->setAttribute(Qt::WA_DeleteOnClose, true);
 
     /**/
 

@@ -184,6 +184,7 @@ void Notes::save()
         m_settings.setValue("Geometry", saveGeometry());
         m_settings.setValue("Visible", m_visible);
         m_settings.setValue("StayOnBottom", !!(windowFlags() & Qt::WindowStaysOnBottomHint));
+        m_settings.sync();
     }
 }
 
@@ -219,11 +220,15 @@ void Notes::mouseReleaseEvent(QMouseEvent *event)
 }
 void Notes::closeEvent(QCloseEvent *event)
 {
-    if (!sender() || QMessageBox::question(this, QString(), tr("Do you want to close?"), QMessageBox::Yes, QMessageBox::No) == QMessageBox::No)
-        event->ignore();
-    else
+    if (sender())
     {
+        if (QMessageBox::question(this, QString(), tr("Do you want to close?"), QMessageBox::Yes, QMessageBox::No) == QMessageBox::No)
+        {
+            event->ignore();
+            return;
+        }
         QCoreApplication::quit();
-        QWidget::closeEvent(event);
+        deleteLater();
     }
+    QWidget::closeEvent(event);
 }
